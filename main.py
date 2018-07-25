@@ -311,7 +311,7 @@ if player_choice == "East":
                         print(" You arrive at a cliff. The general hot on your heels. You can either",Fore.MAGENTA+ 'jump',Fore.BLACK+ 'off, or',Fore.MAGENTA+"fight",Fore.BLACK+ "the general.",Fore.MAGENTA)
                         player_choice = input("")
                         while player_choice != "Jump" and player_choice != "Fight":
-                            print(' Choose either',Fore.MAGENTA+ '"Jump"',Fore.BLACK+ 'or',Fore.MAGENTA+ '"Fight",',Fore.BLACK+ 'please.')
+                            print(Fore.BLACK+' Choose either',Fore.MAGENTA+ '"Jump"',Fore.BLACK+ 'or',Fore.MAGENTA+ '"Fight",',Fore.BLACK+ 'please.')
                             print(" You can either",Fore.MAGENTA+ 'jump',Fore.BLACK+ 'off, or',Fore.MAGENTA+"fight",Fore.BLACK+ "the general.",Fore.MAGENTA)
                             player_choice = input("")
                         if player_choice == "Jump":
@@ -358,6 +358,9 @@ if player_choice == "East":
                             print (Fore.BLACK+' You shoot the general in the head.')
                             time.sleep(2)
                             print (" You win.")
+                        else:
+                            print("The general appears before you.")
+                            fight_only_general(general_health)
                     else:
                         print(Fore.BLACK+" The general catches up to you.")
                         fight_general_with_1_dog(general_health)
