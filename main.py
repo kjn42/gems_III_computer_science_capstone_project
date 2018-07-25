@@ -52,41 +52,37 @@ def fight_general_with_1_dog(general_health):
         print(Fore.BLACK+" The general is in poor condition.")
     else:
         print(Fore.BLACK+"something's wrong")
-    while general_health != 0:
+    print(Fore.MAGENTA+"Attack",Fore.BLACK+"or try to",Fore.MAGENTA+"dodge?")
+    player_choice = input('')
+    while player_choice != "Attack" and player_choice != "Dodge":
+        print(Fore.BLACK+" Choose one of the listed options, please.")
         print(Fore.MAGENTA+"Attack",Fore.BLACK+"or try to",Fore.MAGENTA+"dodge?")
         player_choice = input('')
-        while player_choice != "Attack" and player_choice != "Dodge":
-            print(Fore.BLACK+" Choose one of the listed options, please.")
-            print(Fore.MAGENTA+"Attack",Fore.BLACK+"or try to",Fore.MAGENTA+"dodge?")
-            player_choice = input('')
-        if player_choice == "Attack":
-            print(Fore.BLACK+" You lunge at the general and stab him right in the guts.")
-            general_health -= 1
-        else:
-            print(Fore.BLACK+" You drop your stance and prepare for the worst.")
-        print(Fore.BLACK+" One of the dogs leaps at you, knocking you over.")
-        time.sleep(3)
-        x = random.randint(1,4)
-        print("")
+    if player_choice == "Attack":
+        print(Fore.BLACK+" You lunge at the general and stab him right in the guts.")
+        general_health -= 1
+    else:
+        print(Fore.BLACK+" You drop your stance and prepare for the worst.")
+    print(Fore.BLACK+" One of the dogs leaps at you, knocking you over.")
+    time.sleep(3)
+    x = random.randint(1,4)
+    print("")
+    if x == 1:
+        print(Fore.BLACK+" The dog goes for your neck, killing you instantly.")
+        print(Fore.BLACK+" Game over. You died.")
+    else:
+        print(Fore.BLACK+" You wrestle with the dog and manage to throw it off of you.")
+        print(Fore.BLACK+" Taking the opening, you jump on the dog and kill it before it gets back up.")
+        print(Fore.BLACK+' All that remains is the general. He says, "As expected of a true hunter.')
+        print(Fore.BLACK+" I'd like to play with you more, but it seems your time is up." + '"\n He fires his gun.')
+        time.sleep(5)
+        x = random.randint(1,8)
         if x == 1:
-            print(Fore.BLACK+" The dog goes for your neck, killing you instantly.")
-            print(Fore.BLACK+" Game over. You died.")
-            break
+            print(Fore.BLACK+" His shot misses.")
+            fight_only_general(general_health)
         else:
-            print(Fore.BLACK+" You wrestle with the dog and manage to throw it off of you.")
-            print(Fore.BLACK+" Taking the opening, you jump on the dog and kill it before it gets back up.")
-            print(Fore.BLACK+' All that remains is the general. He says, "As expected of a true hunter.')
-            print(Fore.BLACK+" I'd like to play with you more, but it seems your time is up." + '"\n He fires his gun.')
-            time.sleep(5)
-            x = random.randint(1,8)
-            if x == 1:
-                print(Fore.BLACK+" His shot misses.")
-                fight_only_general(general_health)
-                break
-            else:
-                print(Fore.BLACK+" The well-aimed bullet hits one of your vital points, and pain shoots through your body.")
-                print(Fore.BLACK+' The general sighs and says "You know, I kind of hoped you would put up \n more of a fight." Your vision fades to black.\n Game over. You died')
-                break
+            print(Fore.BLACK+" The well-aimed bullet hits one of your vital points, and pain shoots through your body.")
+            print(Fore.BLACK+' The general sighs and says "You know, I kind of hoped you would put up \n more of a fight." Your vision fades to black.\n Game over. You died')
         
 def fight_general_with_2_dogs(general_health):
     if general_health == 3:
@@ -97,52 +93,145 @@ def fight_general_with_2_dogs(general_health):
         print(Fore.BLACK+" The general is in poor condition.")
     else:
         print(Fore.BLACK+"something's wrong")
-    while general_health != 0:
-        print(Fore.MAGENTA+"Attack",Fore.BLACK+"or try to",Fore.MAGENTA+"dodge?",Fore.MAGENTA)
-        player_choice = input("")
-        while player_choice != "Attack" and player_choice != "Dodge":
-            print(Fore.BLACK+" Choose one of the listed options, please.")
-            print(Fore.MAGENTA+"Attack",Fore.BLACK+"or try to",Fore.MAGENTA+"dodge? ")
-            player_choice = input('')
-        if player_choice == "Attack":
-            print(Fore.BLACK+" You lunge at the general and stab him right in the guts.")
-            general_health -= 1
-        else:
-            print(Fore.BLACK+" You drop your stance and prepare for the worst.")
-        print(Fore.BLACK+" One of the dogs leaps at you, knocking you over.")
-        time.sleep(3)
+    print(Fore.MAGENTA+"Attack",Fore.BLACK+"or try to",Fore.MAGENTA+"dodge?",Fore.MAGENTA)
+    player_choice = input("")
+    while player_choice != "Attack" and player_choice != "Dodge":
+        print(Fore.BLACK+" Choose one of the listed options, please.")
+        print(Fore.MAGENTA+"Attack",Fore.BLACK+"or try to",Fore.MAGENTA+"dodge? ")
+        player_choice = input('')
+    if player_choice == "Attack":
+        print(Fore.BLACK+" You lunge at the general and stab him right in the guts.")
+        general_health -= 1
+    else:
+        print(Fore.BLACK+" You drop your stance and prepare for the worst.")
+    print(Fore.BLACK+" One of the dogs leaps at you, knocking you over.")
+    time.sleep(3)
+    x = random.randint(1,4)
+    print("")
+    if x == 1:
+        print(Fore.BLACK+" The dog goes for your neck, killing you instantly.")
+        print(Fore.BLACK+" Game over. You died.")
+    else:
+        print(Fore.BLACK+" You wrestle with the dog and manage to throw it off of you.")
+        print(Fore.BLACK+" Taking the opening, you jump on the dog and kill it before it gets back up.")
+        print(Fore.BLACK+" The other dog rushes at you, full of rage.")
+        time.sleep(5)
         x = random.randint(1,4)
         print("")
         if x == 1:
-            print(Fore.BLACK+" The dog goes for your neck, killing you instantly.")
+            print(Fore.BLACK+" It jumps at you and starts tearing you apart.")
             print(Fore.BLACK+" Game over. You died.")
-            break
         else:
-            print(Fore.BLACK+" You wrestle with the dog and manage to throw it off of you.")
-            print(Fore.BLACK+" Taking the opening, you jump on the dog and kill it before it gets back up.")
-            print(Fore.BLACK+" The other dog rushes at you, full of rage.")
+            print(Fore.BLACK+" This time, you're ready for it, and quickly grab and dispatch it before it can attack you.")
+            time.sleep(2)
+            print(Fore.BLACK+' All that remains is the general. He says, "As expected of a true hunter.')
+            print(Fore.BLACK+" I'd like to play with you more, but it seems your time is up." + '"\n He fires his gun.')
             time.sleep(5)
-            x = random.randint(1,4)
-            print("")
+            x = random.randint(1,8)
             if x == 1:
-                print(Fore.BLACK+" It jumps at you and starts tearing you apart.")
-                print(Fore.BLACK+" Game over. You died.")
-                break
+                print(Fore.BLACK+" His shot misses.")
+                fight_only_general(general_health)
             else:
-                print(Fore.BLACK+" This time, you're ready for it, and quickly grab and dispatch it before it can attack you.")
+                print(Fore.BLACK+" The well-aimed bullet hits one of your vital points, and pain shoots through your body.")
+                print(Fore.BLACK+' The general sighs and says "You know, I kind of hoped you would put up \n more of a fight." Your vision fades to black.\n Game over. You died')
+
+def final_shootout(general_health):
+    while general_health != 0:
+        #display health
+        if general_health == 3:
+            print(Fore.BLACK+" The general is in perfect condition.")
+        elif general_health == 2:
+            print(Fore.BLACK+" The general looks roughed up.")
+        elif general_health == 1:
+            print(Fore.BLACK+" The general is bleeding heavily.")
+        else:
+            print(Fore.BLACK+"something's wrong")
+        #player chooses
+        print(Fore.MAGENTA+"Shoot",Fore.BLACK+"or try to",Fore.MAGENTA+"Stab?")
+        player_choice = input('')
+        while player_choice != "Shoot" and player_choice != "Stab":
+            print(Fore.BLACK+" Choose one of the listed options, please.")
+            print(Fore.MAGENTA+"Shoot",Fore.BLACK+"or try to",Fore.MAGENTA+"Stab?")
+            player_choice = input('')
+        if player_choice == "Shoot":
+            x = random.randint(1,8)
+            if general_health == 1:
+                print(Fore.BLACK+" You shoot at the general one last time.")
+                time.sleep(1)
+                print(Fore.BLACK+' The general, shocked, falls to his knees.', Fore.RED+'"How could I have lost..."')
                 time.sleep(2)
-                print(Fore.BLACK+' All that remains is the general. He says, "As expected of a true hunter.')
-                print(Fore.BLACK+" I'd like to play with you more, but it seems your time is up." + '"\n He fires his gun.')
-                time.sleep(5)
-                x = random.randint(1,8)
+                print(Fore.BLACK+" The general collapses.")
+                print(Fore.BLACK+ " You win.")
+                break
+            elif general_health == 2:
                 if x == 1:
-                    print(Fore.BLACK+" His shot misses.")
-                    fight_only_general(general_health)
+                    print(Fore.BLACK+" Your shot misses.")
+                else:
+                    print(Fore.BLACK+" You shoot the general. It hits him in the chest.")
+                    general_health -= 1
+            elif general_health == 3:
+                if x == 1:
+                    print(Fore.BLACK+" Your shot misses.")
+                else:
+                    print(Fore.BLACK+" You shoot the general. He tries to dodge it, but it hits him in the shoulder.")
+                    general_health -= 1
+        else:
+            x = random.randint(1,4)
+            if x == 1:
+                print(Fore.BLACK+" You attempt to stab the general, but he nimbly jumps away from you.")
+            elif x == 2:
+                print(Fore.BLACK+" You charge the general and plunge the knife into his stomach before he can react.")
+                time.sleep(2)
+                if general_health == 1:
+                    print(" The general crumples to the floor.")
+                    time.sleep(2)
+                    print(' In his dying breath, he murmurs,',Fore.RED+ '"Worth it..."')
+                    time.sleep(1)
+                    print(Fore.BLACK+" You win.")
                     break
                 else:
-                    print(Fore.BLACK+" The well-aimed bullet hits one of your vital points, and pain shoots through your body.")
-                    print(Fore.BLACK+' The general sighs and says "You know, I kind of hoped you would put up \n more of a fight." Your vision fades to black.\n Game over. You died')
+                    print(" He pushes you off and leaps back, but you can see that the wound is bleeding.")
+                    general_health -= 1
+            elif x == 3:
+                print(Fore.BLACK+" You charge him and manage to stab him twice.")
+                time.sleep(2)
+                if general_health == 1 or general_health == 2:
+                    print(" The general falls to the floor with a thud.")
+                    time.sleep(2)
+                    print(' In his last breath, he murmurs,', Fore.RED+ '"In the end, we are all like animals..."')
                     break
+                else:
+                    print(" Even after two stabs, the general still is standing, although he looks heavily injured.")
+            else:
+                print(Fore.BLACK+" You run up to the general and Julius Caesar him.")
+                time.sleep(2)
+                print(' The general clutches his chest and gasps,',Fore.RED+ '"You were like a feral animal..."')
+                time.sleep(1)
+                print(Fore.BLACK+" He falls to the floor, dead.")
+                time.sleep(1)
+                print(" You win.")
+                break
+        time.sleep(1)
+        print(Fore.BLACK+" The general charges you.")
+        time.sleep(1)
+        x = random.randint(1,20)
+        if x == 2:
+            print(Fore.BLACK+"  He knocks the gun out of your hand.")
+            time.sleep(2)
+            print(" You pull out your knife.")
+            time.sleep(1)
+            fight_only_general(general_health)
+            break
+        elif x <= 19:
+            print(Fore.BLACK+" He leaps and attempts to tackle you, but you move out of the way.")
+        else:
+            print(Fore.BLACK+" He tackles you to the floor. You try to pull out your knife.")
+            time.sleep(2)
+            print(" The general wrestles the knife out of your grasp, and plunges it into your heart.")
+            time.sleep(2)
+            print(' As your vision fades to black, you hear the general remark,',Fore.RED+ '"That was the best hunt I had so far."')
+            print(Fore.BLACK+" Game over. You died.")
+            break
 
 #based on the book The Most Dangerous Game
 print (" You wake up on an island full of trees, your mind is in a daze.")
@@ -331,6 +420,7 @@ if player_choice == "East":
                             time.sleep(3)
                             print (' You rest on the large window ledge and wait until morning.')
                             time.sleep(5)
+                            general_health = 3
                             print (' It is morning and the general wakes up and goes toward the window to open the curtains.')
                             time.sleep(3)
                             print (' You hear the general moving around in his room you quickly hang off the window ledge. The general does not notice your fingers.')
@@ -349,15 +439,9 @@ if player_choice == "East":
                             time.sleep(1)
                             print ('.')
                             time.sleep(1)
-                            print ( '"Looks like that was my last hunt."',Fore.BLACK+" General Health gives a wry smile",Fore.RED+'"At least you gave me the thrill I was seeking."')
-                            time.sleep(3)
                             print (Fore.BLACK+' You load the gun and point it at him.')
                             time.sleep(1.5)
-                            print (Fore.GREEN+' "I guess we both win then."') 
-                            time.sleep(2)
-                            print (Fore.BLACK+' You shoot the general in the head.')
-                            time.sleep(2)
-                            print (" You win.")
+                            final_shootout(general_health)
                         else:
                             print("The general appears before you.")
                             fight_only_general(general_health)
